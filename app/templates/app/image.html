@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <form action="{% url 'upload' %}" method="post" enctype="multipart/form-data">
+        {% csrf_token %}
+        {% if message %}
+
+            <p style="color:green">{{message}}</p>
+        {% endif %}
+        <table>
+            <tr>
+                <td>
+                    Image 
+                </td>
+                <td>
+                    <Input type="file" name="image"/></Input>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <input type="submit" value="Upload">
+                </td>
+            </tr>
+        </table>
+    
+    </form>
+    <form action="{% url 'fetch' %}" method="post">
+        {% csrf_token %}
+        <input type="submit" value="Show">
+    </form>
+    <table>
+        {% if all_img %}
+        {% for a in all_img %}
+        <tr>
+            <td>
+                <img src="{{MEDIA_URL}}{{a.image.url}}" alt="" srcset="" height="150px" width="150px">
+            </td>
+        </tr>
+        {% endfor %}
+        {% endif %}
+    </table>
+</body>
+</html>

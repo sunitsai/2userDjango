@@ -1,0 +1,55 @@
+Tables :
+    1) User ( Master Table )
+    2) Doctor (1st Child Table) (Master table ki Primary key aya gi)
+    3) Paitent (2nd Child Table) (Master table ki Primary key aya gi)
+
+
+
+
+User Table Fields:
+    Email
+    Password
+    Role (Doctor ,Paitent)
+    OTP
+    is_created
+    is_verified (Boolen Field ------> True/ False-------> 1/0)
+    is_active (Boolen Fields ---------> True/False--------->1/0)
+    is_Updated 
+
+
+
+Doctor Table Fields:
+    master table PK
+    firstname
+    lastname
+    gender
+    phone
+    speciality
+    city
+    dob
+
+    ************* This field will get there data when we are going to update there profiles**********************
+
+    address
+    Clinic Name
+    Qualifaction
+    Time Slot
+    Experience
+
+
+Paitent Tables Fields :
+        master table PK
+        firstname
+        lastname
+        phone
+        dob
+        city
+        gender
+
+        ************* This field will get there data when we are going to update there profiles**********************
+
+        blood group
+        address
+        state
+        alternate no
+
